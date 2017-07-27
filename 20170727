@@ -1,0 +1,25 @@
+Use Vb6.0 to make a calculator
+
+1.Form
+This contains all the panels in calculator
+2.buttons
+  1.1 text contents change function
+  1.2 text contentd change function and calculate function
+instialize： session data null
+input 123
+click 1.2 - make session to 123，clear content
+click 1.2 other - same function
+
+so click 1.2
+
+arukorizumu1：
+
+  if both null，do nothing
+  if session is null and text is not null， text to session，make text empry，update mark to current.
+  if session is not null and text is null， do nothing，update mark to current.
+  if session is not null and text is null， clear session set to null，make text by marker，text，session.
+  
+arukorizumu2：
+
+  1.2 is just doing one thing：make text into session if there can not be a calculate。
+      show text if there is a calculate.
