@@ -16,16 +16,16 @@ Basically，it is like class module，but always having interface and .frm，not
 
 3.Class module extended：
 
- ClassA （？？）1.
+ ClassA （Yes，like this）
      field sentences xxx
      method sentences xxx
  End ClassA
  
  exported as cls
  
- 4.module extended：
+ 4.common module extended：
   ModuleA
-      fueldxxxx （？？）2.
+      fueldxxxx （common module has the same life time with project.So as well as the data here）
       methodXXXX
   End ModuleA
   
