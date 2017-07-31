@@ -28,3 +28,15 @@ Merge/calculate/push：find last ，if type not same，call calculate/push，whe
                 make result into a new class with type number.
 when
 
+In vb we do not have a class called queue like jaca，but we can make a own one just work like the queue in
+java.
+
+The commended method is to use an array. 
+
+So ，use like this
+Dim myQueue（）
+method1：add
+method2：remove
+method3：size
+
+property1：max length
