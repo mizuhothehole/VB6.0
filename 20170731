@@ -1,0 +1,30 @@
+About the way to make a calculator
+
+1.Class
+       Kind （number/mark）
+       Value（123，markEnum）
+2.Enum
+       +
+       -
+       *
+       /
+3.Queue
+       classes
+       
+（0）----**142-643*+*46-894+++++800035---
+
+So，Every time we put the click into queue。
+
+算法：（when click marks call，from position 2）
+
+Merge/calculate/push：find last ，if type not same，call calculate/push，when same，call merge.
+      Merge：
+            when type num，making string one by one. Merge last num in queue into current
+            when type mark，making last member removed.
+      Calculate/push：（do not consifer init position）
+            when current is mark and last is num，push
+                make result into a new class with type number.
+            when current is num and last is mark，calculate and push
+                make result into a new class with type number.
+when
+
