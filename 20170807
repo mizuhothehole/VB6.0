@@ -1,4 +1,4 @@
-VB Objects: Collection， Debug， Dictionary
+VB Objects: Collection， Debug， Dictionary，FSO(FileSystemObject), etc
 
 1.Collection
 
@@ -72,3 +72,26 @@ Item ： 用来从字典里面取值
 count ：表示字典中一共有多少个key-Item对。
 
 compareMode ：-1，0，1，2，表示比较模式。
+
+4.FileSystemObject
+
+简称为FSO，是VB6.0之后引进的新对象。代表着整个操作系统的文件系统。
+Dim fs As FileSystemObject
+Set fs = CreateObject("Scripting.FileSystemObject")
+
+由于这是一个很庞大的体系，所以可以分层进行分析。
+Drive对象：代表着文件系统内的所有的驱动。
+Dim d As Drive
+Set d = fs.GetDrive(fs.GetDriveName(drvPath))
+
+这里面有Drive对象的所有的属性。
+比较有用的是AvailableSpace和TotalSize以及FileSystem和DriveType（可移动的？固定的？CD-ROM?）等。
+
+File和Folder对象。
+应该没有什么好研究的，只不过有个SubFolders和Files属性可以得到一个Folder的数组和一个File的数组。
+
+TextStream：这个对象用来读写文件。
+
+剩下就是UserForm对象和Err对象了。
+
+这两个对象基本上就是属于那种仔细研究研究的东西了。
