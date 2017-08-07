@@ -1,4 +1,4 @@
-VB Objects Collection And Debug
+VB Objects: Collection， Debug， Dictionary
 
 1.Collection
 
@@ -45,3 +45,30 @@ Assert 用来断言。 后面跟的是一个布尔型的表达式。
 
     charpos则分为三种情况。在";"的情况下，连续输出到图形界面。在","的情况下，输出到下一个制表符。在缺省的情况下，则会重新起一行进行输出。
 
+3.Dictionary
+
+Remove ：key
+这个方法将会根据具体的key值进行移除操作。如果移除成功则会返回true，如果没有移除成功则会返回false。而且当没法找到具体的key的情况之下，也将返回false。
+
+Add ：key(通常是字符串)，variant
+这个方法将会使得我们添加具体的字符串的key-Item
+！注意，dictionary最大的特性就是不允许有相同的key。这使得我们可以很方便地使用这个对象。如果在代码中添加了相同的key，则会出现运行错误。
+  因此我们在添加之前可以先用exists函数判断一下key值的存在与否，进而进行相关的字典操作。
+
+key ：key 此方法将返回具体的key的所对应的key值的引用。从而使得我们可以任意的修改key的值，而保持Item的值不变。
+
+exists ：表示当前数据字典中存不存在这个key。
+
+remove ：表示移除当前key以及它所包含的内容。
+
+removeAll ：表示移除所有的key和Item
+
+keys ：返回一个包含所有key的数组。注意它的起始下标是0
+
+values ：返回一个包含所有Item的数组，注意它的起始下标是0
+
+Item ： 用来从字典里面取值
+
+count ：表示字典中一共有多少个key-Item对。
+
+compareMode ：-1，0，1，2，表示比较模式。
