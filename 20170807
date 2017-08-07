@@ -95,3 +95,32 @@ TextStream：这个对象用来读写文件。
 剩下就是UserForm对象和Err对象了。
 
 这两个对象基本上就是属于那种仔细研究研究的东西了。
+
+5.Err
+
+这个对象是我们经常用的一个错误对象。这个对象是全局的，不用实例化。
+
+Sub dd()
+On Error Resume Next '即使错误发生也进行下去。否则在Raise的时候直接报错
+
+    Err.Raise 3
+    MsgBox ("Err Number" _
+    & CStr(Err.Number) & " " _
+    & Err.Description & " " _
+    & Err.HelpContext & " " _
+    & Err.HelpFile & " " _
+    & Err.LastDllError & " " _
+    & Err.Source)
+    Err.Clear '此处必须明确的进行清除错误。否则下个输出除了Err.Number值变化之外，其余的属性值都不会有任何的改变。
+    
+    Err.Raise 1
+    MsgBox ("Err Number" _
+    & CStr(Err.Number) & " " _
+    & Err.Description & " " _
+    & Err.HelpContext & " " _
+    & Err.HelpFile & " " _
+    & Err.LastDllError & " " _
+    & Err.Source)
+    Err.Clear
+    
+End Sub
