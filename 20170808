@@ -1,0 +1,64 @@
+Using DOM Document Object In VB
+
+1.We need to add reference to use these libraries
+
+I tested this object in VBA envirenment and found very lots of versions:
+
+Microsoft XML, v3.0
+Microsoft XML, v4.0
+Microsoft XML, v5.0 (well, I also found some CHM file about this version in my local machine)
+Microsoft XML, v6.0
+
+And I found they are basically some kinds of DLL files:
+msxml3.dll
+msxml4.dll
+msxml5.dll
+msxml6.dll
+
+So I learned before that these dlls are some Dynamic Linkage Libraries, so seems it is true.
+
+Then I tried to add these together, but VBE gave a warning message like this: 
+
+  Name conflicts with existing module, project, or object library.
+  
+So seems these dll are also object libraries.
+
+Ok, I think it is a good thing because maybe it is all the same if we want to add some kinds of references of the objects in the visual
+basic development envirenment.So we use these dll files and they will be used as object libraries.
+
+So I used the newest version, v6.0
+
+1)UserForm1.frm
+
+    Private Sub UserForm_Initialize()
+
+    Dim doc As New DOMDocument60
+    doc.async = False
+    doc.validateOnParse = False
+    doc.resolveExternals = False
+
+    Path = "C:\Users\XP022270\Desktop\New folder" + "\test.xml"
+
+    loaded = doc.Load(Path)
+
+    MsgBox "doc: " & doc.XML 'All the xml contents will be shown in Message Box
+    MsgBox "doc: " & loaded 'loaded will be true if we loaded the xml correctly
+
+    MsgBox Path
+
+    End Sub
+
+2)test.xml
+    <?xml version="1.0"?>
+      <root>
+         <node>one</node>
+         <nodes>
+            <node>1</node>
+            <node>2</node>
+         </nodes>
+         <node>two</node>
+      </root>
+
+Here I found is that the whole xml file is dumped into the message box. Shown and popped up.
+
+Cool. So is it always used like this? The dll files?
